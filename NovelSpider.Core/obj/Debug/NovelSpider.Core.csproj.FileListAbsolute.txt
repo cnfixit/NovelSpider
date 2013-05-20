@@ -1,0 +1,8 @@
+E:\project\NovelSpider\NovelSpider.Core\bin\Debug\NovelSpider.Core.dll
+E:\project\NovelSpider\NovelSpider.Core\bin\Debug\NovelSpider.Core.pdb
+E:\project\NovelSpider\NovelSpider.Core\bin\Debug\NovelSpider.Core.XML
+E:\project\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.dll
+E:\project\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
+E:\project\NovelSpider\NovelSpider.Core\obj\Debug\ResolveAssemblyReference.cache
+E:\project\NovelSpider\NovelSpider.Core\obj\Debug\NovelSpider.Core.dll
+E:\project\NovelSpider\NovelSpider.Core\obj\Debug\NovelSpider.Core.pdb

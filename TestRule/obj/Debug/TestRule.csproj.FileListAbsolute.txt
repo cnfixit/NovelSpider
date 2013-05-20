@@ -1,0 +1,7 @@
+E:\project\NovelSpider\NovelSpider\bin\Debug\TestRule.dll
+E:\project\NovelSpider\NovelSpider\bin\Debug\TestRule.pdb
+E:\project\NovelSpider\NovelSpider\bin\Debug\Rules\TestRule.dll
+E:\project\NovelSpider\NovelSpider\bin\Debug\Rules\TestRule.pdb
+E:\project\NovelSpider\TestRule\obj\Debug\ResolveAssemblyReference.cache
+E:\project\NovelSpider\TestRule\obj\Debug\TestRule.dll
+E:\project\NovelSpider\TestRule\obj\Debug\TestRule.pdb

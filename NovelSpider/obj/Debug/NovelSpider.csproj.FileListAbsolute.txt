@@ -1,0 +1,13 @@
+E:\project\NovelSpider\NovelSpider\obj\Debug\ResolveAssemblyReference.cache
+E:\project\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Dispatch.resources
+E:\project\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Main.resources
+E:\project\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Properties.Resources.resources
+E:\project\NovelSpider\NovelSpider\obj\Debug\NovelSpider.csproj.GenerateResource.Cache
+E:\project\NovelSpider\NovelSpider\bin\Debug\NovelSpider.exe
+E:\project\NovelSpider\NovelSpider\bin\Debug\NovelSpider.pdb
+E:\project\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
+E:\project\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.xml
+E:\project\NovelSpider\NovelSpider\obj\Debug\NovelSpider.exe
+E:\project\NovelSpider\NovelSpider\obj\Debug\NovelSpider.pdb
+D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.exe
+D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.pdb

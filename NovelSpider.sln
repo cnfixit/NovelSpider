@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovelSpider", "NovelSpider\NovelSpider.csproj", "{05F27C9E-CF32-456A-8725-B5CA5D8069E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovelSpider.Core", "NovelSpider.Core\NovelSpider.Core.csproj", "{8E5C0762-833B-4954-A2B1-5D78D572378B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRule", "TestRule\TestRule.csproj", "{7F894825-434E-4C6C-842B-A359FEFE4D64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05F27C9E-CF32-456A-8725-B5CA5D8069E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F27C9E-CF32-456A-8725-B5CA5D8069E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F27C9E-CF32-456A-8725-B5CA5D8069E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F27C9E-CF32-456A-8725-B5CA5D8069E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5C0762-833B-4954-A2B1-5D78D572378B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5C0762-833B-4954-A2B1-5D78D572378B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5C0762-833B-4954-A2B1-5D78D572378B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5C0762-833B-4954-A2B1-5D78D572378B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F894825-434E-4C6C-842B-A359FEFE4D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F894825-434E-4C6C-842B-A359FEFE4D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F894825-434E-4C6C-842B-A359FEFE4D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F894825-434E-4C6C-842B-A359FEFE4D64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,726 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NovelSpider.Core</name>
+    </assembly>
+    <members>
+        <member name="T:NovelSpider.Author">
+            <summary>
+            作者信息
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Author.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Author.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:NovelSpider.Author.Name">
+            <summary>
+            作者姓名
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Author.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Author.RealName">
+            <summary>
+            真名
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Author.Introduction">
+            <summary>
+            作者介绍
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Author.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Author.Tag">
+            <summary>
+            备用字段
+            </summary>
+        </member>
+        <member name="T:NovelSpider.Author.EnumSex">
+            <summary>
+            性别枚举
+            </summary>
+        </member>
+        <member name="F:NovelSpider.Author.EnumSex.MALE">
+            <summary>
+            男性
+            </summary>
+        </member>
+        <member name="F:NovelSpider.Author.EnumSex.FEMALE">
+            <summary>
+            女性
+            </summary>
+        </member>
+        <member name="F:NovelSpider.Author.EnumSex.UNKNOWN">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="T:NovelSpider.Volume">
+            <summary>
+            小说分卷
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Volume.#ctor">
+            <summary>
+            默认空构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Volume.#ctor(System.String,System.Uri)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="volumename">分卷名称</param>
+            <param name="volumeuri">分卷地址</param>
+        </member>
+        <member name="M:NovelSpider.Volume.#ctor(System.String,System.Uri,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="volumename">分卷名称</param>
+            <param name="volumeuri">分卷地址</param>
+            <param name="remark">分卷备注</param>
+        </member>
+        <member name="M:NovelSpider.Volume.#ctor(System.String,System.Uri,System.String,System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="volumename">分卷名称</param>
+            <param name="volumeuri">分卷地址</param>
+            <param name="remark">分卷备注</param>
+            <param name="tag">分卷备用</param>
+        </member>
+        <member name="P:NovelSpider.Volume.VolumeName">
+            <summary>
+            分卷名
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Volume.VolumeUri">
+            <summary>
+            分卷地址
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Volume.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Volume.Tag">
+            <summary>
+            备用字段
+            </summary>
+        </member>
+        <member name="T:NovelSpider.Chapter">
+            <summary>
+            章节类
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Chapter.#ctor">
+            <summary>
+            默认空构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Chapter.#ctor(System.String,System.Uri)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">章名</param>
+            <param name="chapteruri">章地址</param>
+        </member>
+        <member name="M:NovelSpider.Chapter.#ctor(System.String,System.Uri,System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">章名</param>
+            <param name="chapteruri">章地址</param>
+            <param name="isvip">是否vip章节</param>
+        </member>
+        <member name="M:NovelSpider.Chapter.#ctor(System.String,System.Uri,System.Boolean,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">章名</param>
+            <param name="chapteruri">章地址</param>
+            <param name="isvip">是否vip</param>
+            <param name="content">内容</param>
+        </member>
+        <member name="M:NovelSpider.Chapter.#ctor(System.String,System.Uri,System.Boolean,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">章名</param>
+            <param name="chapteruri">章地址</param>
+            <param name="isvip">是否vip</param>
+            <param name="content">内容</param>
+            <param name="remark">备注</param>
+        </member>
+        <member name="P:NovelSpider.Chapter.Name">
+            <summary>
+            章名
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Chapter.ChapterUri">
+            <summary>
+            章地址
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Chapter.ChapterID">
+            <summary>
+            章节ID
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Chapter.IsVip">
+            <summary>
+            是否vip章节
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Chapter.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Chapter.Length">
+            <summary>
+            章节字数
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Chapter.Volume">
+            <summary>
+            属于分卷
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Chapter.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Chapter.Tag">
+            <summary>
+            备用字段
+            </summary>
+        </member>
+        <member name="T:NovelSpider.Novel">
+            <summary>
+            小说类
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Novel.NovelInfo">
+            <summary>
+            小说基本信息
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Novel.Volumes">
+            <summary>
+            分卷
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Novel.Chapters">
+            <summary>
+            小说章节集合
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Novel.Length">
+            <summary>
+            小说字数
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Novel.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:NovelSpider.Novel.Tag">
+            <summary>
+            备用字段
+            </summary>
+        </member>
+        <member name="T:NovelSpider.NovelInfo">
+            <summary>
+            小说基本信息类
+            </summary>
+        </member>
+        <member name="M:NovelSpider.NovelInfo.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.NovelInfo.#ctor(System.String,System.Uri)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">小说名称</param>
+            <param name="noveluri">小说地址</param>
+        </member>
+        <member name="M:NovelSpider.NovelInfo.#ctor(System.String,NovelSpider.Author,NovelSpider.NovelInfo.EnumNovelStatus,System.String,System.Uri,System.Uri,System.Uri)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">小说名称</param>
+            <param name="author">小说作者</param>
+            <param name="status">小说状态</param>
+            <param name="summary">小说摘要</param>
+            <param name="noveluri">小说地址</param>
+            <param name="novelchapterlisturi">小说章节列表地址</param>
+            <param name="novelcoveruri">小说封面地址</param>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.Name">
+            <summary>
+            小说名称
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.Author">
+            <summary>
+            作者
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.NovelStatus">
+            <summary>
+            小说状态
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.Summary">
+            <summary>
+            小说摘要
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.NovelUri">
+            <summary>
+            小说url
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.NovelChapterListUri">
+            <summary>
+            小说章节列表uri
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.NovelCoverUri">
+            <summary>
+            小说封面url
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.Source">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.BigClass">
+            <summary>
+            小说大分类
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.SmallClass">
+            <summary>
+            小说小分类
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.BigClassID">
+            <summary>
+            大分类编号
+            </summary>
+        </member>
+        <member name="P:NovelSpider.NovelInfo.SmallClassID">
+            <summary>
+            小分类编号
+            </summary>
+        </member>
+        <member name="T:NovelSpider.NovelInfo.EnumNovelStatus">
+            <summary>
+            小说状态枚举
+            </summary>
+        </member>
+        <member name="F:NovelSpider.NovelInfo.EnumNovelStatus.WRITTING">
+            <summary>
+            写作中
+            </summary>
+        </member>
+        <member name="F:NovelSpider.NovelInfo.EnumNovelStatus.FINISHED">
+            <summary>
+            已完成
+            </summary>
+        </member>
+        <member name="F:NovelSpider.NovelInfo.EnumNovelStatus.PUBLISHED">
+            <summary>
+            已出版
+            </summary>
+        </member>
+        <member name="F:NovelSpider.NovelInfo.EnumNovelStatus.UNKNOWN">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="T:NovelSpider.Procedure">
+            <summary>
+            重写InitTarget方法以初始化地址列表
+            </summary>
+        </member>
+        <member name="T:NovelSpider.IProcedure">
+            <summary>
+            过程接口
+            </summary>
+        </member>
+        <member name="M:NovelSpider.IProcedure.GetNovelList(System.Uri)">
+            <summary>
+            获取小说列表
+            </summary>
+            <param name="targeturi">目标uri</param>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.IProcedure.GetNovelInfo(System.Uri)">
+            <summary>
+            获取小说基本信息
+            </summary>
+            <param name="novelinfouri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.IProcedure.GetVolumes(System.Uri)">
+            <summary>
+            获取小说分卷信息
+            </summary>
+            <param name="novelchapterlisturi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.IProcedure.GetChapterList(System.Uri)">
+            <summary>
+            获取小说章节信息
+            </summary>
+            <param name="novelchapterlisturi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.IProcedure.GetChapter(System.Uri)">
+            <summary>
+            获取章节内容
+            </summary>
+            <param name="chapteruri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.IProcedure.Run">
+            <summary>
+            运行全部过程
+            </summary>
+        </member>
+        <member name="M:NovelSpider.IProcedure.RunGetNovelList(System.Uri)">
+            <summary>
+            单步运行获取小说列表过程
+            </summary>
+            <param name="targeturi"></param>
+        </member>
+        <member name="M:NovelSpider.IProcedure.RunGetNoveInfo(System.Uri)">
+            <summary>
+            单步运行获取小说基本信息过程
+            </summary>
+            <param name="novelinfouri"></param>
+        </member>
+        <member name="M:NovelSpider.IProcedure.RunGetVolumes(System.Uri)">
+            <summary>
+            单步运行获取小说分卷信息过程
+            </summary>
+            <param name="novelchapterlisturi"></param>
+        </member>
+        <member name="M:NovelSpider.IProcedure.RunGetChapterList(System.Uri)">
+            <summary>
+            单步运行获取小说章节信息过程
+            </summary>
+            <param name="novelchapterlisturi"></param>
+        </member>
+        <member name="M:NovelSpider.IProcedure.RunGetChapter(System.Uri)">
+            <summary>
+            单步运行获取小说内容过程
+            </summary>
+            <param name="chapteruri"></param>
+        </member>
+        <member name="E:NovelSpider.IProcedure.NovelListHasGot">
+            <summary>
+            小说列表获取完成时发生
+            </summary>
+        </member>
+        <member name="E:NovelSpider.IProcedure.NovelInfoHasGot">
+            <summary>
+            小说基本信息获取完成时发生
+            </summary>
+        </member>
+        <member name="E:NovelSpider.IProcedure.VolumeListHasGot">
+            <summary>
+            分卷列表信息获取完成时发生
+            </summary>
+        </member>
+        <member name="E:NovelSpider.IProcedure.ChapterListHasGot">
+            <summary>
+            章节列表获取完成时发生
+            </summary>
+        </member>
+        <member name="E:NovelSpider.IProcedure.ChapterHasGot">
+            <summary>
+            内容获取完成时发生
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Procedure.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Procedure.InitTarget">
+            <summary>
+            派生类必须重写此方法以初始化目标地址列表
+            使用this.TargetSite.Add("目标站名称",new Uri("http://127.0.0.1/目标页面地址"));
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Procedure.GetNovelList(System.Uri)">
+            <summary>
+            派生类必须重写此方法以实现采集目标页面小说地址列表
+            返回小说基本信息集合，须至少初始化NovelInfo对象的Name和NovelUri属性
+            添加泛型List实例并返回
+            </summary>
+            <param name="targeturi">目标地址,可直接使用</param>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.Procedure.GetNovelInfo(System.Uri)">
+            <summary>
+            派生类必须重写此方法以获取小说信息,必须初始化小说章节列表uri参数NovelChapterListUri
+            </summary>
+            <returns>NovelInfo类实例</returns>
+        </member>
+        <member name="M:NovelSpider.Procedure.GetVolumes(System.Uri)">
+            <summary>
+            派生类必须重写此方法以获取小说分卷信息
+            </summary>
+            <param name="novelchapterlisturi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.Procedure.GetChapterList(System.Uri)">
+            <summary>
+            派生类必须重写此方法以获取小说章节信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.Procedure.GetChapter(System.Uri)">
+            <summary>
+            获取章节内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NovelSpider.Procedure.RunAll">
+            <summary>
+            运行整个过程
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Procedure.Run">
+            <summary>
+            如非必要请勿重写此方法
+            </summary>
+        </member>
+        <member name="M:NovelSpider.Procedure.RunGetNovelList(System.Uri)">
+            <summary>
+            单步运行获取目标页面小说列表过程
+            </summary>
+            <param name="targeturi"></param>
+        </member>
+        <member name="M:NovelSpider.Procedure.RunGetNoveInfo(System.Uri)">
+            <summary>
+            单步运行获取小说基本信息过程
+            </summary>
+            <param name="novelinfouri"></param>
+        </member>
+        <member name="M:NovelSpider.Procedure.RunGetVolumes(System.Uri)">
+            <summary>
+            单步运行获取小说分卷信息过程
+            </summary>
+            <param name="novelchapterlisturi"></param>
+        </member>
+        <member name="M:NovelSpider.Procedure.RunGetChapterList(System.Uri)">
+            <summary>
+            单步运行采集小说章节列表信息过程
+            </summary>
+            <param name="novelchapterlisturi"></param>
+        </member>
+        <member name="M:NovelSpider.Procedure.RunGetChapter(System.Uri)">
+            <summary>
+            单步运行获取文章内容过程
+            </summary>
+            <param name="chapteruri"></param>
+        </member>
+        <member name="P:NovelSpider.Procedure.TargetSite">
+            <summary>
+            目标地址集合
+            </summary>
+        </member>
+        <member name="E:NovelSpider.Procedure.NovelListHasGot">
+            <summary>
+            小说地址列表信息采集完成事件
+            </summary>
+        </member>
+        <member name="E:NovelSpider.Procedure.NovelInfoHasGot">
+            <summary>
+            小说基本信息采集完成事件
+            </summary>
+        </member>
+        <member name="E:NovelSpider.Procedure.VolumeListHasGot">
+            <summary>
+            分卷信息采集完成事件
+            </summary>
+        </member>
+        <member name="E:NovelSpider.Procedure.ChapterListHasGot">
+            <summary>
+            章节列表信息采集完成事件
+            </summary>
+        </member>
+        <member name="E:NovelSpider.Procedure.ChapterHasGot">
+            <summary>
+            章节采集完成
+            </summary>
+        </member>
+        <member name="T:NovelSpider.NovelListGotEventHandler">
+            <summary>
+            小说列表事件代理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NovelSpider.NovelInfoGotEventHandler">
+            <summary>
+            小说基本信息事件代理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NovelSpider.VolumeListEventHandler">
+            <summary>
+            分卷信息获取事件代理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NovelSpider.ChapterListGotEventHandler">
+            <summary>
+            章节列表信息获取事件代理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NovelSpider.ChapterGotEventHandler">
+            <summary>
+            章节内容获取事件代理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NovelSpider.NovelListEventArgs">
+            <summary>
+            小说列表事件参数类
+            </summary>
+        </member>
+        <member name="M:NovelSpider.NovelListEventArgs.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.NovelListEventArgs.#ctor(System.Collections.Generic.List{NovelSpider.NovelInfo})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="P:NovelSpider.NovelListEventArgs.NovelList">
+            <summary>
+            小说列表
+            </summary>
+        </member>
+        <member name="T:NovelSpider.NovelInfoEventArgs">
+            <summary>
+            小说基本信息事件参数类
+            </summary>
+        </member>
+        <member name="M:NovelSpider.NovelInfoEventArgs.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.NovelInfoEventArgs.#ctor(NovelSpider.NovelInfo)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="novelinfo"></param>
+        </member>
+        <member name="P:NovelSpider.NovelInfoEventArgs.NovelInfo">
+            <summary>
+            小说基本信息
+            </summary>
+        </member>
+        <member name="T:NovelSpider.VolumeListEventArgs">
+            <summary>
+            分卷信息事件参数类
+            </summary>
+        </member>
+        <member name="M:NovelSpider.VolumeListEventArgs.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.VolumeListEventArgs.#ctor(System.Collections.Generic.List{NovelSpider.Volume})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="P:NovelSpider.VolumeListEventArgs.Volumes">
+            <summary>
+            分卷列表
+            </summary>
+        </member>
+        <member name="T:NovelSpider.ChapterListEventArgs">
+            <summary>
+            章节列表事件参数类
+            </summary>
+        </member>
+        <member name="M:NovelSpider.ChapterListEventArgs.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.ChapterListEventArgs.#ctor(System.Collections.Generic.List{NovelSpider.Chapter})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="P:NovelSpider.ChapterListEventArgs.ChapterList">
+            <summary>
+            章节列表
+            </summary>
+        </member>
+        <member name="T:NovelSpider.ChapterEventArgs">
+            <summary>
+            章节内容事件参数类
+            </summary>
+        </member>
+        <member name="M:NovelSpider.ChapterEventArgs.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:NovelSpider.ChapterEventArgs.#ctor(NovelSpider.Chapter)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="chatper"></param>
+        </member>
+        <member name="P:NovelSpider.ChapterEventArgs.Chapter">
+            <summary>
+            章节
+            </summary>
+        </member>
+    </members>
+</doc>
