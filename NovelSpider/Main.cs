@@ -81,6 +81,11 @@ namespace NovelSpider
             Log.PrintLog("小说列表,数量：" + e.NovelList.Count);
         }
 
+        void ip_ProcedureHasFinished(object sender, ProcFinishEventArgs e)
+        {
+            Log.PrintLog("线程结束，消耗时间：" + e.UsedTime.Seconds.ToString() + "秒");
+        }
+
         private void StartToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -101,6 +106,7 @@ namespace NovelSpider
                         ip.VolumeListHasGot += new VolumeListEventHandler(ip_VolumeListHasGot);
                         ip.ChapterListHasGot += new ChapterListGotEventHandler(ip_ChapterListHasGot);
                         ip.ChapterHasGot += new ChapterGotEventHandler(ip_ChapterHasGot);
+                        ip.ProcedureHasFinished += new ProcedureFinishEventHandler(ip_ProcedureHasFinished);
 
                         ip.Run(job.TargetSite);
                     }
@@ -113,6 +119,8 @@ namespace NovelSpider
                 MessageBox.Show(ex.Message);
             }
         }
+
+       
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {

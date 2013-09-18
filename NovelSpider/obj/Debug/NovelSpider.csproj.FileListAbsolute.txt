@@ -22,3 +22,12 @@ D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
 D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.xml
 E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.exe
 E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.pdb
+E:\Projects\csharp\NovelSpider\NovelSpider\bin\Debug\NovelSpider.exe
+E:\Projects\csharp\NovelSpider\NovelSpider\bin\Debug\NovelSpider.pdb
+E:\Projects\csharp\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
+E:\Projects\csharp\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.xml
+E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Dispatch.resources
+E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Main.resources
+E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Properties.Resources.resources
+E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.csproj.GenerateResource.Cache

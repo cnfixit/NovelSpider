@@ -11,3 +11,8 @@ D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
 D:\wx\projects\NovelSpider\NovelSpider.Core\obj\Debug\ResolveAssemblyReference.cache
 D:\wx\projects\NovelSpider\NovelSpider.Core\obj\Debug\NovelSpider.Core.dll
 D:\wx\projects\NovelSpider\NovelSpider.Core\obj\Debug\NovelSpider.Core.pdb
+E:\Projects\csharp\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.dll
+E:\Projects\csharp\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
+E:\Projects\csharp\NovelSpider\NovelSpider.Core\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\csharp\NovelSpider\NovelSpider.Core\obj\Debug\NovelSpider.Core.dll
+E:\Projects\csharp\NovelSpider\NovelSpider.Core\obj\Debug\NovelSpider.Core.pdb

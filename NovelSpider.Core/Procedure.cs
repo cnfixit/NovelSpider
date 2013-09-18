@@ -87,6 +87,7 @@ namespace NovelSpider
         /// </summary>
         private void RunAll(object obj)
         {
+            DateTime start = DateTime.Now;
             m.WaitOne();
             List<Uri> targetsites = obj as List<Uri>;
             _Novels = new List<Novel>[targetsites.Count];
@@ -95,7 +96,7 @@ namespace NovelSpider
             {
                 _Novels[i] = new List<Novel>();
                 Novel novel = new Novel();
-                NovelInfoList = GetNovelList(this._TargetSite[i]);
+                NovelInfoList = GetNovelList(targetsites[i]);
                 //获取小说列表名称和uri信息
                 if (NovelInfoList != null && NovelListHasGot != null)
                     NovelListHasGot(this, new NovelListEventArgs(NovelInfoList));
@@ -146,6 +147,9 @@ namespace NovelSpider
                 i++;
             }
             m.ReleaseMutex();
+            //线程结束事件
+            if (ProcedureHasFinished != null)
+                ProcedureHasFinished(this, new ProcFinishEventArgs(DateTime.Now - start));
         }
 
         private Mutex m = new Mutex(false,"novel");
@@ -264,6 +268,10 @@ namespace NovelSpider
         /// 章节采集完成
         /// </summary>
         public event ChapterGotEventHandler ChapterHasGot;
+        /// <summary>
+        /// 过程结束
+        /// </summary>
+        public event ProcedureFinishEventHandler ProcedureHasFinished;
 
 
     }
@@ -297,6 +305,12 @@ namespace NovelSpider
     /// <param name="sender"></param>
     /// <param name="e"></param>
     public delegate void ChapterGotEventHandler(object sender, ChapterEventArgs e);
+    /// <summary>
+    /// 过程结束事件代理
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    public delegate void ProcedureFinishEventHandler(object sender,ProcFinishEventArgs e);
 
     /// <summary>
     /// 过程接口
@@ -383,6 +397,7 @@ namespace NovelSpider
         /// </summary>
         event ChapterGotEventHandler ChapterHasGot;
 
+        event ProcedureFinishEventHandler ProcedureHasFinished;
     }
 
     /// <summary>
@@ -586,5 +601,33 @@ namespace NovelSpider
         }
     }
 
-
+    /// <summary>
+    /// 过程结束事件参数类
+    /// </summary>
+    public class ProcFinishEventArgs : EventArgs
+    {
+        TimeSpan _UsedTime = new TimeSpan();
+        /// <summary>
+        /// 使用时间
+        /// </summary>
+        public TimeSpan UsedTime
+        {
+            get { return _UsedTime; }
+            set { _UsedTime = value; }
+        }
+        /// <summary>
+        /// 默认构造函数
+        /// </summary>
+        public ProcFinishEventArgs()
+        { 
+        }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="ts"></param>
+        public ProcFinishEventArgs(TimeSpan ts)
+        {
+            this._UsedTime = ts;
+        }
+    }
 }

@@ -37,6 +37,7 @@
             this.gbRemote = new System.Windows.Forms.GroupBox();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.gblocal = new System.Windows.Forms.GroupBox();
             this.MainMenu.SuspendLayout();
             this.gbRemote.SuspendLayout();
             this.SuspendLayout();
@@ -90,10 +91,11 @@
             this.columnHeader1,
             this.columnHeader2});
             this.LVRemote.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LVRemote.FullRowSelect = true;
             this.LVRemote.GridLines = true;
             this.LVRemote.Location = new System.Drawing.Point(3, 17);
             this.LVRemote.Name = "LVRemote";
-            this.LVRemote.Size = new System.Drawing.Size(220, 350);
+            this.LVRemote.Size = new System.Drawing.Size(269, 359);
             this.LVRemote.TabIndex = 0;
             this.LVRemote.UseCompatibleStateImageBehavior = false;
             this.LVRemote.View = System.Windows.Forms.View.Details;
@@ -101,9 +103,10 @@
             // gbRemote
             // 
             this.gbRemote.Controls.Add(this.LVRemote);
-            this.gbRemote.Location = new System.Drawing.Point(0, 27);
+            this.gbRemote.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gbRemote.Location = new System.Drawing.Point(0, 24);
             this.gbRemote.Name = "gbRemote";
-            this.gbRemote.Size = new System.Drawing.Size(449, 370);
+            this.gbRemote.Size = new System.Drawing.Size(521, 379);
             this.gbRemote.TabIndex = 0;
             this.gbRemote.TabStop = false;
             this.gbRemote.Text = "远程数据:";
@@ -111,17 +114,29 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "书名";
+            this.columnHeader1.Width = 98;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "最新章节";
-            this.columnHeader2.Width = 148;
+            this.columnHeader2.Width = 156;
+            // 
+            // gblocal
+            // 
+            this.gblocal.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gblocal.Location = new System.Drawing.Point(527, 24);
+            this.gblocal.Name = "gblocal";
+            this.gblocal.Size = new System.Drawing.Size(381, 379);
+            this.gblocal.TabIndex = 4;
+            this.gblocal.TabStop = false;
+            this.gblocal.Text = "本地数据";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 512);
+            this.Controls.Add(this.gblocal);
             this.Controls.Add(this.gbRemote);
             this.Controls.Add(this.gbOutPut);
             this.Controls.Add(this.MainMenu);
@@ -150,6 +165,7 @@
         private System.Windows.Forms.GroupBox gbRemote;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.GroupBox gblocal;
         
     }
 }

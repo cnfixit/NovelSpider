@@ -29,8 +29,13 @@ namespace NovelSpider
         public override List<NovelInfo> GetNovelList(Uri targeturi) 
         {
             List<NovelInfo> list = new List<NovelInfo>();
-            list.Add(new NovelInfo("天龙八部", new Uri("http://127.0.0.1/tlbb.html")));
-            list.Add(new NovelInfo("神雕侠侣", new Uri("http://127.0.0.1/stxl.html")));
+            int i = 1;
+            int cnt = new Random().Next(1, 5);
+            for (int j = 0; j < cnt; j++)
+            {
+                list.Add(new NovelInfo("第" + i + "本", new Uri(targeturi + i.ToString())));
+            }
+            i++;
             System.Threading.Thread.Sleep(new Random().Next(1000,3000));
             System.Diagnostics.Debug.WriteLine("GetNovelList:" + targeturi);
             return list;
