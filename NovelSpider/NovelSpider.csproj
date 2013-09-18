@@ -46,6 +46,9 @@
     <Compile Include="Dispatch.Designer.cs">
       <DependentUpon>Dispatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function.cs" />
+    <Compile Include="JobItem.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

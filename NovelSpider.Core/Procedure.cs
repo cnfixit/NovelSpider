@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Text;
+using System.Threading;
 
 namespace NovelSpider
 {
@@ -84,11 +85,13 @@ namespace NovelSpider
         /// <summary>
         /// 运行整个过程
         /// </summary>
-        private void RunAll()
+        private void RunAll(object obj)
         {
-            _Novels = new List<Novel>[this._TargetSite.Count];
+            m.WaitOne();
+            List<Uri> targetsites = obj as List<Uri>;
+            _Novels = new List<Novel>[targetsites.Count];
             List<NovelInfo> NovelInfoList = null;
-            for (int i = 0;i <this._TargetSite.Count;i++ )//目标页面循环
+            for (int i = 0; i < targetsites.Count; i++)//目标页面循环
             {
                 _Novels[i] = new List<Novel>();
                 Novel novel = new Novel();
@@ -111,18 +114,19 @@ namespace NovelSpider
                             NovelInfoHasGot(this, new NovelInfoEventArgs(novel.NovelInfo));
                         }
                     }
-
-
+#if debug
+                    System.Diagnostics.Debug.WriteLine(novel.NovelInfo.Name);
+#endif
 
                     //每个小说的分卷信息
                     novel.Volumes = GetVolumes(NovelInfoList[j].NovelChapterListUri);
                     if (novel.Volumes != null && VolumeListHasGot != null)
-                        VolumeListHasGot(this, new VolumeListEventArgs(novel.Volumes));
+                        VolumeListHasGot(this, new VolumeListEventArgs(novel.Volumes,novel.NovelInfo));
 
                     //每个小说的章节信息
                     novel.Chapters = GetChapterList(NovelInfoList[j].NovelChapterListUri);
                     if (novel.Chapters != null && ChapterListHasGot != null)
-                        ChapterListHasGot(this, new ChapterListEventArgs(novel.Chapters));
+                        ChapterListHasGot(this, new ChapterListEventArgs(novel.Chapters, novel.NovelInfo));
 
 
                     for (int k = 0; k < novel.Chapters.Count; k++)
@@ -134,21 +138,25 @@ namespace NovelSpider
                         }
                         novel.Chapters[k] = GetChapter(novel.Chapters[k].ChapterUri);
                         if (novel.Chapters[k] != null && ChapterHasGot != null)
-                            ChapterHasGot(this, new ChapterEventArgs(novel.Chapters[k]));
+                            ChapterHasGot(this, new ChapterEventArgs(novel.Chapters[k],novel.NovelInfo));
                     }
 
                     _Novels[i].Add(novel);
                 }
                 i++;
             }
+            m.ReleaseMutex();
         }
+
+        private Mutex m = new Mutex(false,"novel");
 
         /// <summary>
         /// 如非必要请勿重写此方法
         /// </summary>
-        public virtual void Run()
+        public virtual void Run(List<Uri> targetsites)
         {
-            RunAll();
+            Thread t = new Thread(new ParameterizedThreadStart(RunAll));
+            t.Start(targetsites);
         }
 
         private void _RunGetNovelList(Uri targeturi)
@@ -328,7 +336,7 @@ namespace NovelSpider
         /// <summary>
         /// 运行全部过程
         /// </summary>
-        void Run();
+        void Run(List<Uri> targetsites);
         /// <summary>
         /// 单步运行获取小说列表过程
         /// </summary>
@@ -447,6 +455,16 @@ namespace NovelSpider
             get { return _Volumes; }
             set { _Volumes = value; }
         }
+
+        NovelInfo _NovelInfo = new NovelInfo();
+        /// <summary>
+        /// 与分卷相关章节信息
+        /// </summary>
+        public NovelInfo NovelInfo
+        {
+            get { return _NovelInfo; }
+            set { _NovelInfo = value; }
+        }
         /// <summary>
         /// 默认构造函数
         /// </summary>
@@ -454,10 +472,20 @@ namespace NovelSpider
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="list"></param>
+        /// <param name="list">章节列表</param>
         public VolumeListEventArgs(List<Volume> list)
         {
             this._Volumes = list;
+        }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="list">章节列表</param>
+        /// <param name="novelinfo">与分卷相关章节信息</param>
+        public VolumeListEventArgs(List<Volume> list,NovelInfo novelinfo)
+        {
+            this._Volumes = list;
+            this._NovelInfo = novelinfo;
         }
     }
 
@@ -475,6 +503,16 @@ namespace NovelSpider
             get { return _ChapterList; }
             set { _ChapterList = value; }
         }
+
+        NovelInfo _NovelInfo = new NovelInfo();
+        /// <summary>
+        /// 与分卷相关章节信息
+        /// </summary>
+        public NovelInfo NovelInfo
+        {
+            get { return _NovelInfo; }
+            set { _NovelInfo = value; }
+        }
         /// <summary>
         /// 默认构造函数
         /// </summary>
@@ -486,6 +524,17 @@ namespace NovelSpider
         public ChapterListEventArgs(List<Chapter> list)
         {
             this._ChapterList = list;
+        }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="novelinfo"></param>
+        public ChapterListEventArgs(List<Chapter> list,NovelInfo novelinfo)
+        {
+            this._ChapterList = list;
+            this._NovelInfo = novelinfo;
         }
     }
     /// <summary>
@@ -502,6 +551,16 @@ namespace NovelSpider
             get { return _Chapter; }
             set { _Chapter = value; }
         }
+
+        NovelInfo _NovelInfo = new NovelInfo();
+        /// <summary>
+        /// 与分卷相关章节信息
+        /// </summary>
+        public NovelInfo NovelInfo
+        {
+            get { return _NovelInfo; }
+            set { _NovelInfo = value; }
+        }
         /// <summary>
         /// 默认构造函数
         /// </summary>
@@ -513,6 +572,17 @@ namespace NovelSpider
         public ChapterEventArgs(Chapter chatper)
         {
             this._Chapter = chatper;
+        }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="chatper"></param>
+        /// <param name="novelinfo"></param>
+        public ChapterEventArgs(Chapter chatper,NovelInfo novelinfo)
+        {
+            this._Chapter = chatper;
+            this._NovelInfo = novelinfo;
         }
     }
 

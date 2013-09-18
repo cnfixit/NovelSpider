@@ -9,6 +9,16 @@ namespace NovelSpider
     /// </summary>
     public class Chapter
     {
+        private NovelInfo _NovelInfo;
+        /// <summary>
+        /// 章节相关小说嘻嘻
+        /// </summary>
+        public NovelInfo NovelInfo
+        {
+            get { return _NovelInfo; }
+            set { _NovelInfo = value; }
+        }
+
         private string _Name;
         /// <summary>
         /// 章名
@@ -112,6 +122,19 @@ namespace NovelSpider
         {
             this._Name = name;
             this._ChapterUri = chapteruri;
+        }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="name">章名</param>
+        /// <param name="chapteruri">章地址</param>
+        /// <param name="novelinfo">相关小说信息</param>
+        public Chapter (string name,Uri chapteruri,NovelInfo novelinfo)
+        {
+            this._Name = name;
+            this._ChapterUri = chapteruri;
+            this._NovelInfo = novelinfo;
         }
         /// <summary>
         /// 构造函数

@@ -16,7 +16,11 @@ namespace NovelSpider
         {
             this.SiteName = "17看";
             this.TargetSite.Add(new Uri("http://127.0.0.1"));
-            this.TargetSite.Add(new Uri("http://127.0.2.1"));
+            this.TargetSite.Add(new Uri("http://127.0.0.2"));
+            this.TargetSite.Add(new Uri("http://127.0.0.3"));
+            this.TargetSite.Add(new Uri("http://127.0.0.4"));
+            this.TargetSite.Add(new Uri("http://127.0.0.5"));
+            this.TargetSite.Add(new Uri("http://127.0.0.6"));
         }
 
 
@@ -25,15 +29,19 @@ namespace NovelSpider
         public override List<NovelInfo> GetNovelList(Uri targeturi) 
         {
             List<NovelInfo> list = new List<NovelInfo>();
-            list.Add(new NovelInfo("天龙八部", new Uri("http://127.0.0.1/1.html")));
-            list.Add(new NovelInfo("神雕侠侣", new Uri("http://127.0.0.1/2.html")));
+            list.Add(new NovelInfo("天龙八部", new Uri("http://127.0.0.1/tlbb.html")));
+            list.Add(new NovelInfo("神雕侠侣", new Uri("http://127.0.0.1/stxl.html")));
+            System.Threading.Thread.Sleep(new Random().Next(1000,3000));
+            System.Diagnostics.Debug.WriteLine("GetNovelList:" + targeturi);
             return list;
         }
 
 
         public override NovelInfo GetNovelInfo(Uri novelinfouri)
         {
-            return new NovelInfo("天龙八部", new Author("金庸"), NovelInfo.EnumNovelStatus.PUBLISHED, "北乔峰南慕容", new Uri("http://127.0.0.1/1.html"), new Uri("http://127.0.0.1/1/list.html"), new Uri("http://127.0.0.1/img/1.jpg"));
+            System.Threading.Thread.Sleep(new Random().Next(1000, 3000));
+            System.Diagnostics.Debug.WriteLine("GetNovelInfo:" + novelinfouri);
+            return new NovelInfo(novelinfouri.AbsoluteUri, new Author("金庸"), NovelInfo.EnumNovelStatus.PUBLISHED, "北乔峰南慕容", new Uri("http://127.0.0.1/1.html"), new Uri("http://127.0.0.1/1/list.html"), new Uri("http://127.0.0.1/img/1.jpg"));
         }
 
         public override List<Volume> GetVolumes(Uri novelchapterlisturi)
@@ -43,6 +51,8 @@ namespace NovelSpider
             list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/1")));
             list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/2")));
             list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/3")));
+            System.Threading.Thread.Sleep(new Random().Next(1000, 3000));
+            System.Diagnostics.Debug.WriteLine("GetVolumes:" + novelchapterlisturi);
             return list;
         }
 
@@ -56,11 +66,15 @@ namespace NovelSpider
             list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/1")));
             list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/2")));
             list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/3")));
+            System.Threading.Thread.Sleep(new Random().Next(1000, 3000));
+            System.Diagnostics.Debug.WriteLine("GetChapterList:" + novelchapterlisturi);
             return list;
         }
 
         public override Chapter GetChapter(Uri chapteruri)
         {
+            System.Threading.Thread.Sleep(new Random().Next(1000, 3000));
+            System.Diagnostics.Debug.WriteLine("GetChapter:" + chapteruri);
             return new Chapter("第一章", new Uri("http://127.0.0.1/1/1"), true, "这是一篇小说");
         }
     }

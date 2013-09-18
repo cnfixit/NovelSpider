@@ -11,3 +11,12 @@ E:\project\NovelSpider\NovelSpider\obj\Debug\NovelSpider.exe
 E:\project\NovelSpider\NovelSpider\obj\Debug\NovelSpider.pdb
 D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.exe
 D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.pdb
+D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.exe
+D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.pdb
+D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\ResolveAssemblyReference.cache
+D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Dispatch.resources
+D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Main.resources
+D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Properties.Resources.resources
+D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.csproj.GenerateResource.Cache
+D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
+D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.xml

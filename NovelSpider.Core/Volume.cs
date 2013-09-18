@@ -9,6 +9,16 @@ namespace NovelSpider
     /// </summary>
     public class Volume
     {
+        private NovelInfo _NovelInfo;
+        /// <summary>
+        /// 卷相关小说信息
+        /// </summary>
+        public NovelInfo NovelInfo
+        {
+            get { return _NovelInfo; }
+            set { _NovelInfo = value; }
+        }
+
         private string _VolumeName;
         /// <summary>
         /// 分卷名
@@ -62,6 +72,19 @@ namespace NovelSpider
         {
             this._VolumeName = volumename;
             this._VolumeUri = volumeuri;
+        }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="volumename">分卷名称</param>
+        /// <param name="volumeuri">分卷地址</param>
+        /// <param name="novelinfo">相关小说信息</param>
+        public Volume(string volumename,Uri volumeuri,NovelInfo novelinfo)
+        {
+            this._VolumeName = volumename;
+            this._VolumeUri = volumeuri;
+            this._NovelInfo = novelinfo;
         }
 
         /// <summary>
