@@ -120,12 +120,12 @@ namespace NovelSpider
 #endif
 
                     //每个小说的分卷信息
-                    novel.Volumes = GetVolumes(NovelInfoList[j].NovelChapterListUri);
+                    novel.Volumes = GetVolumes(novel.NovelInfo.NovelChapterListUri);
                     if (novel.Volumes != null && VolumeListHasGot != null)
                         VolumeListHasGot(this, new VolumeListEventArgs(novel.Volumes,novel.NovelInfo));
 
                     //每个小说的章节信息
-                    novel.Chapters = GetChapterList(NovelInfoList[j].NovelChapterListUri);
+                    novel.Chapters = GetChapterList(novel.NovelInfo.NovelChapterListUri);
                     if (novel.Chapters != null && ChapterListHasGot != null)
                         ChapterListHasGot(this, new ChapterListEventArgs(novel.Chapters, novel.NovelInfo));
 

@@ -172,7 +172,7 @@
         </member>
         <member name="P:NovelSpider.NovelInfo.Name">
             <summary>
-            小说名称
+            [必填]小说名称
             </summary>
         </member>
         <member name="P:NovelSpider.NovelInfo.Author">
@@ -192,12 +192,12 @@
         </member>
         <member name="P:NovelSpider.NovelInfo.NovelUri">
             <summary>
-            小说url
+            [必填]小说url
             </summary>
         </member>
         <member name="P:NovelSpider.NovelInfo.NovelChapterListUri">
             <summary>
-            小说章节列表uri
+            [必填]小说章节列表uri
             </summary>
         </member>
         <member name="P:NovelSpider.NovelInfo.NovelCoverUri">

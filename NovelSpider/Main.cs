@@ -84,6 +84,7 @@ namespace NovelSpider
         void ip_ProcedureHasFinished(object sender, ProcFinishEventArgs e)
         {
             Log.PrintLog("线程结束，消耗时间：" + e.UsedTime.Seconds.ToString() + "秒");
+            this.StartToolStripMenuItem.Enabled = true;
         }
 
         private void StartToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,6 +110,7 @@ namespace NovelSpider
                         ip.ProcedureHasFinished += new ProcedureFinishEventHandler(ip_ProcedureHasFinished);
 
                         ip.Run(job.TargetSite);
+                        this.StartToolStripMenuItem.Enabled = false;
                     }
                 }
                 Log.PrintLog("结束调度");

@@ -53,9 +53,9 @@ namespace NovelSpider
         {
             int i = 0;
             List<Volume> list = new List<Volume>();
-            list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/1")));
-            list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/2")));
-            list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/3")));
+            list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/v1")));
+            list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/v2")));
+            list.Add(new Volume("第" + (i++).ToString() + "卷", new Uri("http://127.0.0.1/v3")));
             System.Threading.Thread.Sleep(new Random().Next(1000, 3000));
             System.Diagnostics.Debug.WriteLine("GetVolumes:" + novelchapterlisturi);
             return list;
@@ -68,9 +68,9 @@ namespace NovelSpider
         {
             int i = 0;
             List<Chapter> list = new List<Chapter>();
-            list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/1")));
-            list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/2")));
-            list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/3")));
+            list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/c1")));
+            list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/c2")));
+            list.Add(new Chapter("第" + (i++).ToString() + "章", new Uri("http://127.0.0.1/1/c3")));
             System.Threading.Thread.Sleep(new Random().Next(1000, 3000));
             System.Diagnostics.Debug.WriteLine("GetChapterList:" + novelchapterlisturi);
             return list;
@@ -80,7 +80,7 @@ namespace NovelSpider
         {
             System.Threading.Thread.Sleep(new Random().Next(1000, 3000));
             System.Diagnostics.Debug.WriteLine("GetChapter:" + chapteruri);
-            return new Chapter("第一章", new Uri("http://127.0.0.1/1/1"), true, "这是一篇小说");
+            return new Chapter("第一章", new Uri("http://127.0.0.1/1/c1"), true, "这是一篇小说");
         }
     }
 }

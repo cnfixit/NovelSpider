@@ -12,7 +12,7 @@ namespace NovelSpider
         private string _Name;
 
         /// <summary>
-        /// 小说名称
+        /// [必填]小说名称
         /// </summary>
         public string Name
         {
@@ -75,7 +75,7 @@ namespace NovelSpider
 
         private Uri _NovelUri;
         /// <summary>
-        /// 小说url
+        /// [必填]小说url
         /// </summary>
         public Uri NovelUri
         {
@@ -85,7 +85,7 @@ namespace NovelSpider
 
         private Uri _NovelChapterListUri;
         /// <summary>
-        /// 小说章节列表uri
+        /// [必填]小说章节列表uri
         /// </summary>
         public Uri NovelChapterListUri
         {
