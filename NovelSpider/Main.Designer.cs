@@ -35,6 +35,8 @@
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LVRemote = new System.Windows.Forms.ListView();
             this.gbRemote = new System.Windows.Forms.GroupBox();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.MainMenu.SuspendLayout();
             this.gbRemote.SuspendLayout();
             this.SuspendLayout();
@@ -71,24 +73,27 @@
             // StartToolStripMenuItem
             // 
             this.StartToolStripMenuItem.Name = "StartToolStripMenuItem";
-            this.StartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.StartToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.StartToolStripMenuItem.Text = "开始";
             this.StartToolStripMenuItem.Click += new System.EventHandler(this.StartToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
             // LVRemote
             // 
-            this.LVRemote.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LVRemote.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.LVRemote.Dock = System.Windows.Forms.DockStyle.Left;
             this.LVRemote.GridLines = true;
             this.LVRemote.Location = new System.Drawing.Point(3, 17);
             this.LVRemote.Name = "LVRemote";
-            this.LVRemote.Size = new System.Drawing.Size(432, 200);
+            this.LVRemote.Size = new System.Drawing.Size(220, 350);
             this.LVRemote.TabIndex = 0;
             this.LVRemote.UseCompatibleStateImageBehavior = false;
             this.LVRemote.View = System.Windows.Forms.View.Details;
@@ -98,10 +103,19 @@
             this.gbRemote.Controls.Add(this.LVRemote);
             this.gbRemote.Location = new System.Drawing.Point(0, 27);
             this.gbRemote.Name = "gbRemote";
-            this.gbRemote.Size = new System.Drawing.Size(438, 370);
+            this.gbRemote.Size = new System.Drawing.Size(449, 370);
             this.gbRemote.TabIndex = 0;
             this.gbRemote.TabStop = false;
             this.gbRemote.Text = "远程数据:";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "书名";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "最新章节";
+            this.columnHeader2.Width = 148;
             // 
             // Main
             // 
@@ -134,6 +148,8 @@
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.ListView LVRemote;
         private System.Windows.Forms.GroupBox gbRemote;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
         
     }
 }

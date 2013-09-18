@@ -20,3 +20,5 @@ D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Properties.Resource
 D:\wx\projects\NovelSpider\NovelSpider\obj\Debug\NovelSpider.csproj.GenerateResource.Cache
 D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
 D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.xml
+E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.exe
+E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.pdb
