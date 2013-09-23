@@ -31,3 +31,4 @@ E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.Properties.Reso
 E:\Projects\csharp\NovelSpider\NovelSpider\obj\Debug\NovelSpider.csproj.GenerateResource.Cache
 E:\Projects\csharp\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.pdb
 E:\Projects\csharp\NovelSpider\NovelSpider\bin\Debug\NovelSpider.Core.xml
+D:\wx\projects\NovelSpider\NovelSpider\bin\Debug\ICSharpCode.SharpZipLib.dll

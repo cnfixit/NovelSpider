@@ -32,13 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Author.cs" />
     <Compile Include="Chapter.cs" />
+    <Compile Include="HttpClient.cs" />
     <Compile Include="Novel.cs" />
     <Compile Include="NovelInfo.cs" />
     <Compile Include="Procedure.cs" />
