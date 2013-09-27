@@ -9,8 +9,16 @@ using System.IO;
 
 namespace NovelSpider
 {
+    /// <summary>
+    /// 使用Http协议模拟浏览器行为
+    /// </summary>
     public class HttpClient
     {
+        /// <summary>
+        /// 将字符串形式的cookie转换为CookieCollection
+        /// </summary>
+        /// <param name="CookiesString"></param>
+        /// <returns></returns>
         public static CookieCollection ToCookies(string CookiesString)
         {
             CookieCollection cookies = new CookieCollection();
@@ -23,7 +31,11 @@ namespace NovelSpider
             return cookies;
         }
 
-
+        /// <summary>
+        /// 将CookieCollection转换为字符串
+        /// </summary>
+        /// <param name="cookies"></param>
+        /// <returns></returns>
         public static string ToString(CookieCollection cookies)
         {
             string[] cookiestring = new string[cookies.Count];
@@ -101,6 +113,10 @@ namespace NovelSpider
             return request; 
         }
 
+        /// <summary>
+        /// 获取图像
+        /// </summary>
+        /// <returns></returns>
         public Image GetImage()
         {
             Image image = null;
@@ -126,7 +142,10 @@ namespace NovelSpider
             }
             return image;
         }
-
+        /// <summary>
+        /// 获取web内容
+        /// </summary>
+        /// <returns></returns>
         public string GetString()
         {
 
@@ -397,6 +416,9 @@ namespace NovelSpider
 
         #region 编码
         private System.Text.Encoding _Encoding = System.Text.Encoding.Default;
+        /// <summary>
+        /// 页面编码
+        /// </summary>
         public System.Text.Encoding Encoding
         {
             get { return _Encoding; }

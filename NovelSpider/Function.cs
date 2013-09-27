@@ -9,20 +9,18 @@ namespace NovelSpider
     public static class Function
     {
 
-
-
         /// <summary>
-        /// 获取指定动态库IProcedure实例
+        /// 获取指定动态库ICollector实例
         /// </summary>
         /// <param name="filepath"></param>
         /// <returns></returns>
-        public static IProcedure GetPluginInterface(string filepath)
+        public static ICollector GetCollectorPluginInterface(string filepath)
         {
             if (!File.Exists(filepath))
                 return null;
 
             Type type = null;
-            IProcedure ip = null;
+            ICollector ic = null;
             string fullname = string.Empty;
 
             try
@@ -33,7 +31,7 @@ namespace NovelSpider
 
                 foreach (Type t in tps)
                 {
-                    if (t.IsSubclassOf(typeof(Procedure)))
+                    if (t.IsSubclassOf(typeof(Collector)))
                     {
                         fullname = t.FullName;
                         type = t;
@@ -43,17 +41,60 @@ namespace NovelSpider
 
                 if (!string.IsNullOrEmpty(fullname))
                 {
-                    ip = ass.CreateInstance(fullname) as IProcedure;
+                    ic = ass.CreateInstance(fullname) as ICollector;
                 }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
-            return ip;
+            return ic;
         }
+
+
+        /// <summary>
+        /// 获取指定动态库IStorager实例
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
+        public static IStorager GetStoragerPluginInterface(string filepath)
+        {
+            if (!File.Exists(filepath))
+                return null;
+
+            Type type = null;
+            IStorager ist = null;
+            string fullname = string.Empty;
+
+            try
+            {
+                Assembly ass = Assembly.LoadFile(filepath);
+                Type[] tps = ass.GetTypes();
+
+
+                foreach (Type t in tps)
+                {
+                    if (t.IsSubclassOf(typeof(Storager)))
+                    {
+                        fullname = t.FullName;
+                        type = t;
+                        break;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(fullname))
+                {
+                    ist = ass.CreateInstance(fullname) as Storager;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ist;
+        }
+
 
         /// <summary>
         /// 获取指定动态库的站点名称
@@ -73,12 +114,12 @@ namespace NovelSpider
                 Type[] tps = ass.GetTypes();
                 Type type = null;
                 string fullname = string.Empty;
-                Procedure pro = null;
+                Collector clo = null;
 
 
                 foreach (Type t in tps)
                 {
-                    if (t.IsSubclassOf(typeof(Procedure)))
+                    if (t.IsSubclassOf(typeof(Collector)))
                     {
                         fullname = t.FullName;
                         type = t;
@@ -87,9 +128,9 @@ namespace NovelSpider
                 }
 
                 if (!string.IsNullOrEmpty(fullname))
-                    pro = ass.CreateInstance(fullname) as Procedure;
-                if (pro != null)
-                    res = pro.SiteName;
+                    clo = ass.CreateInstance(fullname) as Collector;
+                if (clo != null)
+                    res = clo.SiteName;
             }
             catch (Exception ex)
             {
@@ -117,12 +158,12 @@ namespace NovelSpider
                 Type[] tps = ass.GetTypes();
                 Type type = null;
                 string fullname = string.Empty;
-                Procedure pro = null;
+                Collector clo = null;
 
 
                 foreach (Type t in tps)
                 {
-                    if (t.IsSubclassOf(typeof(Procedure)))
+                    if (t.IsSubclassOf(typeof(Collector)))
                     {
                         fullname = t.FullName;
                         type = t;
@@ -131,9 +172,52 @@ namespace NovelSpider
                 }
 
                 if (!string.IsNullOrEmpty(fullname))
-                    pro = ass.CreateInstance(fullname) as Procedure;
-                if (pro != null)
-                    res = pro.TargetSite;
+                    clo = ass.CreateInstance(fullname) as Collector;
+                if (clo != null)
+                    res = clo.TargetSite;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return res;
+        }
+
+        /// <summary>
+        /// 获取指定动态库的站点名称
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
+        public static string GetTargetMethodName(string filepath)
+        {
+            if (!File.Exists(filepath))
+                return null;
+
+            string res = string.Empty;
+            try
+            {
+                Assembly ass = Assembly.LoadFile(filepath);
+
+                Type[] tps = ass.GetTypes();
+                Type type = null;
+                string fullname = string.Empty;
+                Storager sto = null;
+
+
+                foreach (Type t in tps)
+                {
+                    if (t.IsSubclassOf(typeof(Storager)))
+                    {
+                        fullname = t.FullName;
+                        type = t;
+                        break;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(fullname))
+                    sto = ass.CreateInstance(fullname) as Storager;
+                if (sto != null)
+                    res = sto.MethodName;
             }
             catch (Exception ex)
             {

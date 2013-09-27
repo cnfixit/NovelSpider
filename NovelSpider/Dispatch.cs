@@ -26,25 +26,78 @@ namespace NovelSpider
             set { _Jobs = value; }
         }
 
-        
+
+        private IStorager _iStorager = null;
+        /// <summary>
+        /// 当前使用的存储接口
+        /// </summary>
+        public IStorager iStorager
+        {
+            get { return _iStorager; }
+            set { _iStorager = value; }
+        }
+
+
 
         private void Dispatch_Load(object sender, EventArgs e)
+        {
+            InitRuleUI();
+            InitStorageUI();
+        }
+
+
+        /// <summary>
+        /// 初始化存储UI
+        /// </summary>
+        private void InitStorageUI()
+        {
+            try
+            {
+                string path = Constant.STORAGE_RULE_PATH;
+                string[] files = Directory.GetFiles(path, "*.dll");
+                this.StorageTabControl.TabPages.Clear();
+                foreach (string s in files)
+                {
+                    string methodname = Function.GetTargetMethodName(s);
+                    IStorager ist = Function.GetStoragerPluginInterface(s);
+                    if (!string.IsNullOrEmpty(methodname) && ist != null)
+                    {
+                        TabPage tp = new TabPage(methodname);
+                        tp.Tag = ist;//保存接口备用
+                        this.StorageTabControl.TabPages.Add(tp);
+                        ist.InitUI(tp);                       
+                    }
+                    else
+                        continue;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 根据规则目录中的规则动态库文件生成界面
+        /// </summary>
+        private void InitRuleUI()
         {
             this._Jobs.Clear();
             try
             {
-                string path = Application.StartupPath + @"\Rules\";
+                string path = Constant.COLLECT_RULE_PATH;
                 string[] files = Directory.GetFiles(path, "*.dll");
-                
-               
+
+
                 this.JobtabControl.TabPages.Clear();
                 foreach (string s in files)
                 {
                     string sitename = Function.GetTargetSiteName(s);
-                    TabPage tp = new TabPage(sitename);
                     ListView lv = null;
                     if (!string.IsNullOrEmpty(sitename))
                     {
+                        TabPage tp = new TabPage(sitename);
                         this.JobtabControl.TabPages.Add(tp);
                         lv = new ListView();
                         lv.Scrollable = true;
@@ -54,7 +107,7 @@ namespace NovelSpider
                         lv.FullRowSelect = true;
                         lv.GridLines = true;
                         lv.CheckBoxes = true;
-                        
+
                         lv.ContextMenuStrip = this.ruleCMS;
                         ColumnHeader ch = new ColumnHeader();
                         ch.Width = (int)(this.JobtabControl.Width * 0.2) - 1;
@@ -82,7 +135,7 @@ namespace NovelSpider
                         foreach (Uri uri in targetsite)
                         {
 
-                            string[] items = { sitename, uri.AbsoluteUri,s};
+                            string[] items = { sitename, uri.AbsoluteUri, s };
                             lv.Items.Add(new ListViewItem(items));
                         }
                     }
@@ -169,6 +222,7 @@ namespace NovelSpider
             {
                 this._Jobs.Add(lvi.Tag as JobItem);
             }
+            this._iStorager = this.StorageTabControl.SelectedTab.Tag as IStorager;
         }
 
 

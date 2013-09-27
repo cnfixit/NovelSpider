@@ -16,8 +16,6 @@ namespace NovelSpider
 {
 
     
-
-
     public partial class Main : Form
     {
         public Main()
@@ -37,18 +35,23 @@ namespace NovelSpider
             // MsgBox
             // 
             MsgBox = new ListBox();
-            MsgBox.BackColor = System.Drawing.SystemColors.InfoText;
-            MsgBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            MsgBox.ForeColor = System.Drawing.SystemColors.Info;
+            MsgBox.BackColor = SystemColors.InfoText;
+            MsgBox.Dock = DockStyle.Fill;
+            MsgBox.ForeColor = SystemColors.Info;
             MsgBox.ItemHeight = 12;
-            MsgBox.Location = new System.Drawing.Point(3, 17);
+            MsgBox.Location = new Point(3, 17);
             MsgBox.Name = "MsgBox";
-            MsgBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            MsgBox.Size = new System.Drawing.Size(902, 88);
+            MsgBox.SelectionMode = SelectionMode.None;
+            MsgBox.Size = new Size(902, 88);
             MsgBox.TabIndex = 100;
            
             this.gbOutPut.Controls.Add(MsgBox);
         }
+
+        /// <summary>
+        /// 当前使用的存储接口
+        /// </summary>
+        private IStorager ist = null;
 
 
         private void Main_Load(object sender, EventArgs e)
@@ -74,6 +77,10 @@ namespace NovelSpider
         void ip_NovelInfoHasGot(object sender, NovelInfoEventArgs e)
         {
             Log.PrintLog("基本信息:" + e.NovelInfo.NovelChapterListUri);
+            if(ist != null)
+            {
+                ist.SaveNovelInfo(e.NovelInfo);
+            }
         }
 
         void ip_NovelListHasGot(object sender, NovelListEventArgs e)
@@ -97,19 +104,20 @@ namespace NovelSpider
                 {
                     foreach (JobItem job in dispatch.Jobs)
                     {
-                        IProcedure ip = Function.GetPluginInterface(job.AssemblyPath);
+                        ICollector ic = Function.GetCollectorPluginInterface(job.AssemblyPath);
+                        ist = dispatch.iStorager;//保存存储接口
 
-                        if (ip == null)
+                        if (ic == null)
                             throw new Exception("Invalid PluginInterface.");
 
-                        ip.NovelListHasGot += new NovelListGotEventHandler(ip_NovelListHasGot);
-                        ip.NovelInfoHasGot += new NovelInfoGotEventHandler(ip_NovelInfoHasGot);
-                        ip.VolumeListHasGot += new VolumeListEventHandler(ip_VolumeListHasGot);
-                        ip.ChapterListHasGot += new ChapterListGotEventHandler(ip_ChapterListHasGot);
-                        ip.ChapterHasGot += new ChapterGotEventHandler(ip_ChapterHasGot);
-                        ip.ProcedureHasFinished += new ProcedureFinishEventHandler(ip_ProcedureHasFinished);
+                        ic.NovelListHasGot += new NovelListGotEventHandler(ip_NovelListHasGot);
+                        ic.NovelInfoHasGot += new NovelInfoGotEventHandler(ip_NovelInfoHasGot);
+                        ic.VolumeListHasGot += new VolumeListEventHandler(ip_VolumeListHasGot);
+                        ic.ChapterListHasGot += new ChapterListGotEventHandler(ip_ChapterListHasGot);
+                        ic.ChapterHasGot += new ChapterGotEventHandler(ip_ChapterHasGot);
+                        ic.ProcedureHasFinished += new ProcedureFinishEventHandler(ip_ProcedureHasFinished);
 
-                        ip.Run(job.TargetSite);
+                        ic.Run(job.TargetSite);
                         this.StartToolStripMenuItem.Enabled = false;
                     }
                 }

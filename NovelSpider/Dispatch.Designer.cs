@@ -50,11 +50,17 @@
             this.全选ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.反选ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.清空ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gbStorage = new System.Windows.Forms.GroupBox();
+            this.StorageTabControl = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.JobtabControl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.jobCMS.SuspendLayout();
             this.ruleCMS.SuspendLayout();
+            this.gbStorage.SuspendLayout();
+            this.StorageTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // JobtabControl
@@ -65,7 +71,7 @@
             this.JobtabControl.Location = new System.Drawing.Point(3, 17);
             this.JobtabControl.Name = "JobtabControl";
             this.JobtabControl.SelectedIndex = 0;
-            this.JobtabControl.Size = new System.Drawing.Size(373, 390);
+            this.JobtabControl.Size = new System.Drawing.Size(370, 245);
             this.JobtabControl.TabIndex = 0;
             // 
             // tabPage1
@@ -73,7 +79,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 21);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(365, 365);
+            this.tabPage1.Size = new System.Drawing.Size(362, 220);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -91,7 +97,7 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(440, 387);
+            this.btnOK.Location = new System.Drawing.Point(441, 476);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
@@ -102,7 +108,7 @@
             // btncancel
             // 
             this.btncancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btncancel.Location = new System.Drawing.Point(560, 387);
+            this.btncancel.Location = new System.Drawing.Point(561, 476);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(75, 23);
             this.btncancel.TabIndex = 1;
@@ -112,9 +118,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.JobtabControl);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(6, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 410);
+            this.groupBox1.Size = new System.Drawing.Size(376, 265);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "规则池：";
@@ -122,9 +128,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.LVjob);
-            this.groupBox2.Location = new System.Drawing.Point(388, 3);
+            this.groupBox2.Location = new System.Drawing.Point(6, 274);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(296, 374);
+            this.groupBox2.Size = new System.Drawing.Size(376, 225);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "任务队列：";
@@ -141,7 +147,7 @@
             this.LVjob.GridLines = true;
             this.LVjob.Location = new System.Drawing.Point(3, 17);
             this.LVjob.Name = "LVjob";
-            this.LVjob.Size = new System.Drawing.Size(290, 354);
+            this.LVjob.Size = new System.Drawing.Size(370, 205);
             this.LVjob.TabIndex = 0;
             this.LVjob.UseCompatibleStateImageBehavior = false;
             this.LVjob.View = System.Windows.Forms.View.Details;
@@ -231,13 +237,55 @@
             this.清空ToolStripMenuItem.Text = "清空";
             this.清空ToolStripMenuItem.Click += new System.EventHandler(this.清空ToolStripMenuItem_Click);
             // 
+            // gbStorage
+            // 
+            this.gbStorage.Controls.Add(this.StorageTabControl);
+            this.gbStorage.Location = new System.Drawing.Point(388, 3);
+            this.gbStorage.Name = "gbStorage";
+            this.gbStorage.Size = new System.Drawing.Size(320, 460);
+            this.gbStorage.TabIndex = 4;
+            this.gbStorage.TabStop = false;
+            this.gbStorage.Text = "存储";
+            // 
+            // StorageTabControl
+            // 
+            this.StorageTabControl.Controls.Add(this.tabPage3);
+            this.StorageTabControl.Controls.Add(this.tabPage4);
+            this.StorageTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StorageTabControl.Location = new System.Drawing.Point(3, 17);
+            this.StorageTabControl.Name = "StorageTabControl";
+            this.StorageTabControl.SelectedIndex = 0;
+            this.StorageTabControl.Size = new System.Drawing.Size(314, 440);
+            this.StorageTabControl.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 21);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(306, 415);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 21);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(192, 75);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // Dispatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 418);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(712, 511);
+            this.Controls.Add(this.gbStorage);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -253,6 +301,8 @@
             this.groupBox2.ResumeLayout(false);
             this.jobCMS.ResumeLayout(false);
             this.ruleCMS.ResumeLayout(false);
+            this.gbStorage.ResumeLayout(false);
+            this.StorageTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -280,5 +330,9 @@
         private System.Windows.Forms.ToolStripMenuItem 全选ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 反选ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 清空ToolStripMenuItem1;
+        private System.Windows.Forms.GroupBox gbStorage;
+        private System.Windows.Forms.TabControl StorageTabControl;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }

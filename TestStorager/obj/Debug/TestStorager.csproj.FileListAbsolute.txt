@@ -1,0 +1,5 @@
+D:\wx\projects\NovelSpider\TestStorager\obj\Debug\ResolveAssemblyReference.cache
+D:\wx\projects\NovelSpider\bin\Debug\Storagers\TestStorager.dll
+D:\wx\projects\NovelSpider\bin\Debug\Storagers\TestStorager.pdb
+D:\wx\projects\NovelSpider\TestStorager\obj\Debug\TestStorager.dll
+D:\wx\projects\NovelSpider\TestStorager\obj\Debug\TestStorager.pdb

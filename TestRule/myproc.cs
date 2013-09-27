@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NovelSpider
 {
-    public class myproc : Procedure
+    public class myproc : Collector
     {
         public myproc()
         {
@@ -46,7 +46,7 @@ namespace NovelSpider
         {
             System.Threading.Thread.Sleep(new Random().Next(1000, 3000));
             System.Diagnostics.Debug.WriteLine("GetNovelInfo:" + novelinfouri);
-            return new NovelInfo(novelinfouri.AbsoluteUri, new Author("金庸"), NovelInfo.EnumNovelStatus.PUBLISHED, "北乔峰南慕容", new Uri("http://127.0.0.1/1.html"), new Uri("http://127.0.0.1/1/list.html"), new Uri("http://127.0.0.1/img/1.jpg"));
+            return new NovelInfo("天龙八部", new Author("金庸"), NovelInfo.EnumNovelStatus.PUBLISHED, "北乔峰南慕容", new Uri("http://127.0.0.1/1.html"), new Uri("http://127.0.0.1/1/list.html"), new Uri("http://127.0.0.1/img/1.jpg"));
         }
 
         public override List<Volume> GetVolumes(Uri novelchapterlisturi)

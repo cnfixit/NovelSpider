@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovelSpider.Core", "NovelSp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRule", "TestRule\TestRule.csproj", "{7F894825-434E-4C6C-842B-A359FEFE4D64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestStorager", "TestStorager\TestStorager.csproj", "{A27A3204-675E-444D-AA53-DAD19AC30160}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{7F894825-434E-4C6C-842B-A359FEFE4D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F894825-434E-4C6C-842B-A359FEFE4D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F894825-434E-4C6C-842B-A359FEFE4D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27A3204-675E-444D-AA53-DAD19AC30160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27A3204-675E-444D-AA53-DAD19AC30160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27A3204-675E-444D-AA53-DAD19AC30160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27A3204-675E-444D-AA53-DAD19AC30160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
